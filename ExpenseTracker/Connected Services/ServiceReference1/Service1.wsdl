@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:52000/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:52000/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:52000/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ExpenseTrackingService" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IExpenseTrackerServiceOf_String_Int32_Add_Income_InputMessage">
+    <wsdl:part name="parameters" element="tns:Add_Income" />
+  </wsdl:message>
+  <wsdl:message name="IExpenseTrackerServiceOf_String_Int32_Add_Income_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Add_IncomeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpenseTrackerServiceOf_String_Int32_Add_Expense_InputMessage">
+    <wsdl:part name="parameters" element="tns:Add_Expense" />
+  </wsdl:message>
+  <wsdl:message name="IExpenseTrackerServiceOf_String_Int32_Add_Expense_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Add_ExpenseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpenseTrackerServiceOf_String_Int32_Update_Income_InputMessage">
+    <wsdl:part name="parameters" element="tns:Update_Income" />
+  </wsdl:message>
+  <wsdl:message name="IExpenseTrackerServiceOf_String_Int32_Update_Income_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Update_IncomeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpenseTrackerServiceOf_String_Int32_Update_Expense_InputMessage">
+    <wsdl:part name="parameters" element="tns:Update_Expense" />
+  </wsdl:message>
+  <wsdl:message name="IExpenseTrackerServiceOf_String_Int32_Update_Expense_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Update_ExpenseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpenseTrackerServiceOf_String_Int32_Delete_Income_InputMessage">
+    <wsdl:part name="parameters" element="tns:Delete_Income" />
+  </wsdl:message>
+  <wsdl:message name="IExpenseTrackerServiceOf_String_Int32_Delete_Income_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Delete_IncomeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpenseTrackerServiceOf_String_Int32_Delete_Expense_InputMessage">
+    <wsdl:part name="parameters" element="tns:Delete_Expense" />
+  </wsdl:message>
+  <wsdl:message name="IExpenseTrackerServiceOf_String_Int32_Delete_Expense_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Delete_ExpenseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpenseTrackerServiceOf_String_Int32_Get_Income_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Income" />
+  </wsdl:message>
+  <wsdl:message name="IExpenseTrackerServiceOf_String_Int32_Get_Income_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_IncomeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpenseTrackerServiceOf_String_Int32_Get_Expense_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Expense" />
+  </wsdl:message>
+  <wsdl:message name="IExpenseTrackerServiceOf_String_Int32_Get_Expense_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_ExpenseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpenseTrackerServiceOf_String_Int32_Get_Income_By_Id_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Income_By_Id" />
+  </wsdl:message>
+  <wsdl:message name="IExpenseTrackerServiceOf_String_Int32_Get_Income_By_Id_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Income_By_IdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpenseTrackerServiceOf_String_Int32_Get_Expense_By_Id_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Expense_By_Id" />
+  </wsdl:message>
+  <wsdl:message name="IExpenseTrackerServiceOf_String_Int32_Get_Expense_By_Id_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Expense_By_IdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IExpenseTrackerServiceOf_String_Int32">
+    <wsdl:operation name="Add_Income">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpenseTrackerServiceOf_String_Int32/Add_Income" message="tns:IExpenseTrackerServiceOf_String_Int32_Add_Income_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpenseTrackerServiceOf_String_Int32/Add_IncomeResponse" message="tns:IExpenseTrackerServiceOf_String_Int32_Add_Income_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Add_Expense">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpenseTrackerServiceOf_String_Int32/Add_Expense" message="tns:IExpenseTrackerServiceOf_String_Int32_Add_Expense_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpenseTrackerServiceOf_String_Int32/Add_ExpenseResponse" message="tns:IExpenseTrackerServiceOf_String_Int32_Add_Expense_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_Income">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpenseTrackerServiceOf_String_Int32/Update_Income" message="tns:IExpenseTrackerServiceOf_String_Int32_Update_Income_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpenseTrackerServiceOf_String_Int32/Update_IncomeResponse" message="tns:IExpenseTrackerServiceOf_String_Int32_Update_Income_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_Expense">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpenseTrackerServiceOf_String_Int32/Update_Expense" message="tns:IExpenseTrackerServiceOf_String_Int32_Update_Expense_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpenseTrackerServiceOf_String_Int32/Update_ExpenseResponse" message="tns:IExpenseTrackerServiceOf_String_Int32_Update_Expense_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Income">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpenseTrackerServiceOf_String_Int32/Delete_Income" message="tns:IExpenseTrackerServiceOf_String_Int32_Delete_Income_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpenseTrackerServiceOf_String_Int32/Delete_IncomeResponse" message="tns:IExpenseTrackerServiceOf_String_Int32_Delete_Income_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Expense">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpenseTrackerServiceOf_String_Int32/Delete_Expense" message="tns:IExpenseTrackerServiceOf_String_Int32_Delete_Expense_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpenseTrackerServiceOf_String_Int32/Delete_ExpenseResponse" message="tns:IExpenseTrackerServiceOf_String_Int32_Delete_Expense_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Income">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpenseTrackerServiceOf_String_Int32/Get_Income" message="tns:IExpenseTrackerServiceOf_String_Int32_Get_Income_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpenseTrackerServiceOf_String_Int32/Get_IncomeResponse" message="tns:IExpenseTrackerServiceOf_String_Int32_Get_Income_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Expense">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpenseTrackerServiceOf_String_Int32/Get_Expense" message="tns:IExpenseTrackerServiceOf_String_Int32_Get_Expense_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpenseTrackerServiceOf_String_Int32/Get_ExpenseResponse" message="tns:IExpenseTrackerServiceOf_String_Int32_Get_Expense_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Income_By_Id">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpenseTrackerServiceOf_String_Int32/Get_Income_By_Id" message="tns:IExpenseTrackerServiceOf_String_Int32_Get_Income_By_Id_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpenseTrackerServiceOf_String_Int32/Get_Income_By_IdResponse" message="tns:IExpenseTrackerServiceOf_String_Int32_Get_Income_By_Id_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Expense_By_Id">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpenseTrackerServiceOf_String_Int32/Get_Expense_By_Id" message="tns:IExpenseTrackerServiceOf_String_Int32_Get_Expense_By_Id_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpenseTrackerServiceOf_String_Int32/Get_Expense_By_IdResponse" message="tns:IExpenseTrackerServiceOf_String_Int32_Get_Expense_By_Id_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IExpenseTrackerServiceOf_String_Int32" type="tns:IExpenseTrackerServiceOf_String_Int32">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Add_Income">
+      <soap:operation soapAction="http://tempuri.org/IExpenseTrackerServiceOf_String_Int32/Add_Income" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add_Expense">
+      <soap:operation soapAction="http://tempuri.org/IExpenseTrackerServiceOf_String_Int32/Add_Expense" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_Income">
+      <soap:operation soapAction="http://tempuri.org/IExpenseTrackerServiceOf_String_Int32/Update_Income" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_Expense">
+      <soap:operation soapAction="http://tempuri.org/IExpenseTrackerServiceOf_String_Int32/Update_Expense" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Income">
+      <soap:operation soapAction="http://tempuri.org/IExpenseTrackerServiceOf_String_Int32/Delete_Income" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Expense">
+      <soap:operation soapAction="http://tempuri.org/IExpenseTrackerServiceOf_String_Int32/Delete_Expense" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Income">
+      <soap:operation soapAction="http://tempuri.org/IExpenseTrackerServiceOf_String_Int32/Get_Income" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Expense">
+      <soap:operation soapAction="http://tempuri.org/IExpenseTrackerServiceOf_String_Int32/Get_Expense" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Income_By_Id">
+      <soap:operation soapAction="http://tempuri.org/IExpenseTrackerServiceOf_String_Int32/Get_Income_By_Id" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Expense_By_Id">
+      <soap:operation soapAction="http://tempuri.org/IExpenseTrackerServiceOf_String_Int32/Get_Expense_By_Id" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IExpenseTrackerServiceOf_String_Int32" binding="tns:BasicHttpBinding_IExpenseTrackerServiceOf_String_Int32">
+      <soap:address location="http://localhost:52000/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
